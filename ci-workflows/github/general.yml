@@ -1,0 +1,53 @@
+name: rust
+
+on: [push, pull-request]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    name: Test
+    runs-on: Ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Run Tests
+        run: cargo test
+
+  fmt:
+    name: Formatter
+    runs-on: Ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - name: Enforcing Formatting
+        run: cargo fmt --check
+
+  clippy:
+    name: Clippy
+    runs-on: Ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dotlnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: linting
+        run: cargo clippy -- -D warning
+
+  coverage:
+    name: Code coverage
+    runs-on: Ubuntu-latest
+    container:
+      image: xd009642/tarpaulin
+      options: --security-opt seccomp=unconfined
+    step:
+      - name: chechout repository
+        uses: action/checkout@v3
+      - name: generate Code Coverage
+        run: |
+          cargo tarnpaulin --verbose -workspace
