@@ -1,0 +1,45 @@
+{
+  "cache_hits": 4,
+  "cache_misses": 3,
+  "files": {
+    "Cargo.toml": {
+      "fingerprint": "1e16ad50b9ced4ec",
+      "line_count": 6,
+      "symbol_count": 5,
+      "outline_lines": [
+        "- [package]",
+        "- name = \"rephraze_backend\"",
+        "- version = \"0.1.0\"",
+        "- edition = \"2024\"",
+        "- [dependencies]"
+      ]
+    },
+    "rephraze_backend_ai_pipeline.md": {
+      "fingerprint": "8a921cf500c3f8ba",
+      "line_count": 1290,
+      "symbol_count": 12,
+      "outline_lines": [
+        "- module Rephraze Backend + AI Pipeline Architecture :: # Rephraze Backend + AI Pipeline Architecture",
+        "- module Purpose :: ## Purpose",
+        "- module 1. Core Stack :: ## 1. Core Stack",
+        "- module 2. Database Choice :: ## 2. Database Choice",
+        "- module 3. Vector Storage :: ## 3. Vector Storage",
+        "- module 4. DDD Bounded Contexts :: ## 4. DDD Bounded Contexts",
+        "- module User / Identity :: ### User / Identity",
+        "- module Circle :: ### Circle",
+        "- module Speaking Goals :: ### Speaking Goals",
+        "- module Word Ownership :: ### Word Ownership",
+        "- module Vocal Ego :: ### Vocal Ego",
+        "- module Audio Processing :: ### Audio Processing"
+      ]
+    },
+    "src/main.rs": {
+      "fingerprint": "9cde933f206dd2d6",
+      "line_count": 3,
+      "symbol_count": 1,
+      "outline_lines": [
+        "- function main :: fn main() {"
+      ]
+    }
+  }
+}
