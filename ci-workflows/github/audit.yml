@@ -5,15 +5,15 @@ on:
   schedule:
     - cron: "0 0 * * *"
   push:
-    path:
-      - "**cargo.toml"
-      - "**cargo.lock"
+    paths:
+      - "**/cargo.toml"
+      - "**/cargo.lock"
 
 jobs:
   security_audit:
-    runs_on: Ubuntu-latest
+    runs-on: Ubuntu-latest
     steps:
-      - uses: actions/chechout@v3
+      - uses: actions/checkout@v3
       - uses: taiki-e/install-action@cargo-deny
       - name: Scan for Vulnerabilities
         run: cargo deny check advisories

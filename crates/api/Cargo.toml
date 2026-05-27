@@ -3,4 +3,16 @@ name = "api"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "api"
+path = "src/main.rs"
+
 [dependencies]
+actix-web.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+serde.workspace = true
+reqwest = "0.13.4"
