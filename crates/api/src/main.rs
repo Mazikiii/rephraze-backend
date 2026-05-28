@@ -1,4 +1,5 @@
 use api::run;
+use bootstrap::configuration::get_configurations;
 use std::net::TcpListener;
 
 #[tokio::main]

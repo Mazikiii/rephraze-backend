@@ -16,3 +16,5 @@ tracing.workspace = true
 tokio.workspace = true
 serde.workspace = true
 reqwest = "0.13.4"
+
+bootstrap = {path = "../bootstrap"}
